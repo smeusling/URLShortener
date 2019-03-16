@@ -9,34 +9,38 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        return cell
+    }
+    
 
-    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var largeURLTextField: UITextField!
+    @IBOutlet weak var convertButton: UIButton!
+    @IBOutlet weak var tinyURLLabel: UILabel!
+    @IBOutlet weak var tableview: UITableView!
+    
+    @IBAction func convertButtonClicked(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        urlLabel.text = "Tcho"
-        shortenUrl()
-    }
-
-    func shortenUrl() {
-        let url = URL(string: "http://tinyurl.com/api-create.php")!
-        
-        // post the data
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        let postData = "url=https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html".data(using: .utf8)
-        request.httpBody = postData
-        
-        // execute the datatask and validate the result
-        let task = URLSession.shared.dataTask(with: request) {
-            (data, response, error) in
-            
-            if error == nil, let userObject = String(data: data!, encoding: .utf8) {
-                print(userObject)
+        tinyURLLabel.text = "Tcho"
+        //ApiClient.sharedInstance.shortenUrl(longUrl: "https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html")
+        ApiClient.sharedInstance.shortenUrl(longUrl: "https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html") { (tinyUrl, error) in
+            if error == nil {
+                print(tinyUrl!)
             }
         }
-        task.resume()
+        //shortenUrl()
     }
+
+    
     
 }

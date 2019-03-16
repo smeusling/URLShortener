@@ -12,6 +12,7 @@
 		505861B7223C0D9400A91E32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 505861B5223C0D9400A91E32 /* Main.storyboard */; };
 		505861B9223C0D9700A91E32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 505861B8223C0D9700A91E32 /* Assets.xcassets */; };
 		505861BC223C0D9700A91E32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 505861BA223C0D9700A91E32 /* LaunchScreen.storyboard */; };
+		50779F03223D76F50006BE33 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50779F02223D76F50006BE33 /* ApiClient.swift */; };
 		AD201850AE880876025212CA /* Pods_URLShortener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0DCC2A771D3420D385AE7C /* Pods_URLShortener.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		505861BB223C0D9700A91E32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		505861BD223C0D9700A91E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50779F01223C164D0006BE33 /* URLShortener-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "URLShortener-Bridging-Header.h"; sourceTree = "<group>"; };
+		50779F02223D76F50006BE33 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		7420BDE4ED6ECBA025934B44 /* Pods-URLShortener.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLShortener.release.xcconfig"; path = "Target Support Files/Pods-URLShortener/Pods-URLShortener.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				505861B8223C0D9700A91E32 /* Assets.xcassets */,
 				505861BA223C0D9700A91E32 /* LaunchScreen.storyboard */,
 				505861BD223C0D9700A91E32 /* Info.plist */,
+				50779F02223D76F50006BE33 /* ApiClient.swift */,
 			);
 			path = URLShortener;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				505861B4223C0D9400A91E32 /* ViewController.swift in Sources */,
 				505861B2223C0D9400A91E32 /* AppDelegate.swift in Sources */,
+				50779F03223D76F50006BE33 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
