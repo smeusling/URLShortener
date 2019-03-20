@@ -14,12 +14,9 @@
 		505861BC223C0D9700A91E32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 505861BA223C0D9700A91E32 /* LaunchScreen.storyboard */; };
 		50779F03223D76F50006BE33 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50779F02223D76F50006BE33 /* ApiClient.swift */; };
 		50779F052242B1F10006BE33 /* TinyUrlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50779F042242B1F10006BE33 /* TinyUrlTableViewCell.swift */; };
-		AD201850AE880876025212CA /* Pods_URLShortener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0DCC2A771D3420D385AE7C /* Pods_URLShortener.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0951AF5BDE1803793BDE9FC3 /* Pods-URLShortener.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLShortener.debug.xcconfig"; path = "Target Support Files/Pods-URLShortener/Pods-URLShortener.debug.xcconfig"; sourceTree = "<group>"; };
-		4A0DCC2A771D3420D385AE7C /* Pods_URLShortener.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLShortener.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505861AE223C0D9400A91E32 /* URLShortener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLShortener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		505861B1223C0D9400A91E32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		505861B3223C0D9400A91E32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,10 +24,8 @@
 		505861B8223C0D9700A91E32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		505861BB223C0D9700A91E32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		505861BD223C0D9700A91E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50779F01223C164D0006BE33 /* URLShortener-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "URLShortener-Bridging-Header.h"; sourceTree = "<group>"; };
 		50779F02223D76F50006BE33 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		50779F042242B1F10006BE33 /* TinyUrlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUrlTableViewCell.swift; sourceTree = "<group>"; };
-		7420BDE4ED6ECBA025934B44 /* Pods-URLShortener.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLShortener.release.xcconfig"; path = "Target Support Files/Pods-URLShortener/Pods-URLShortener.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD201850AE880876025212CA /* Pods_URLShortener.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,11 +42,8 @@
 		505861A5223C0D9400A91E32 = {
 			isa = PBXGroup;
 			children = (
-				50779F01223C164D0006BE33 /* URLShortener-Bridging-Header.h */,
 				505861B0223C0D9400A91E32 /* URLShortener */,
 				505861AF223C0D9400A91E32 /* Products */,
-				BE0D5745E9AF75210D3A3A52 /* Pods */,
-				E206AFF4CC565C3AA7DAE1DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,23 +70,6 @@
 			path = URLShortener;
 			sourceTree = "<group>";
 		};
-		BE0D5745E9AF75210D3A3A52 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0951AF5BDE1803793BDE9FC3 /* Pods-URLShortener.debug.xcconfig */,
-				7420BDE4ED6ECBA025934B44 /* Pods-URLShortener.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		E206AFF4CC565C3AA7DAE1DB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4A0DCC2A771D3420D385AE7C /* Pods_URLShortener.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,7 +77,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 505861C0223C0D9700A91E32 /* Build configuration list for PBXNativeTarget "URLShortener" */;
 			buildPhases = (
-				EBCCD485C3F70DC18C344A1D /* [CP] Check Pods Manifest.lock */,
 				505861AA223C0D9400A91E32 /* Sources */,
 				505861AB223C0D9400A91E32 /* Frameworks */,
 				505861AC223C0D9400A91E32 /* Resources */,
@@ -162,31 +135,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		EBCCD485C3F70DC18C344A1D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-URLShortener-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		505861AA223C0D9400A91E32 /* Sources */ = {
@@ -340,10 +288,10 @@
 		};
 		505861C1223C0D9700A91E32 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0951AF5BDE1803793BDE9FC3 /* Pods-URLShortener.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = URLShortener/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -351,7 +299,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.smeusling.URLShortener;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "URLShortener-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,10 +307,10 @@
 		};
 		505861C2223C0D9700A91E32 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7420BDE4ED6ECBA025934B44 /* Pods-URLShortener.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = URLShortener/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -370,7 +318,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.smeusling.URLShortener;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "URLShortener-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
