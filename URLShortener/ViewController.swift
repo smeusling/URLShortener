@@ -19,37 +19,73 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var largeURLTextField: UITextField!
     @IBOutlet weak var convertButton: UIButton!
-    @IBOutlet weak var tinyURLLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var tableview: UITableView!
     
     var savedUrlArray:[SavedUrl] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         readUrls()
+        largeURLTextField.text = "https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html"
     }
     
     @IBAction func convertButtonClicked(_ sender: Any) {
-        let longUrl = "https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        ApiClient.sharedInstance.shortenUrl(longUrl: longUrl) { (tinyUrl, error) in
-            if let tinyUrl = tinyUrl {
-                self.addUrlToTableView(savedUrl: SavedUrl(longUrl: longUrl, tinyUrl: tinyUrl, date: dateFormatter.string(from: Date())))
+        if let longUrl = largeURLTextField.text {
+            if !longUrl.isEmpty{
+                let isCorrectUrl = verifyUrl(urlString: longUrl)
+                if isCorrectUrl{
+                    ApiClient.sharedInstance.shortenUrl(longUrl: largeURLTextField.text!) { (tinyUrl, error) in
+                        if let tinyUrl = tinyUrl {
+                            self.addUrlToTableView(savedUrl: SavedUrl(longUrl: longUrl, tinyUrl: tinyUrl, date: dateFormatter.string(from: Date())), error:error)
+                        }
+                    }
+                }else{
+                    self.fillStatusLabel(statusText: "Your Url has not the right format", isError: true)
+                }
+            }else{
+                self.fillStatusLabel(statusText: "Url field cannot be empty", isError: true)
             }
-            if error == nil {
-                print(tinyUrl!)
-            }
+        }else{
+            self.fillStatusLabel(statusText: "Url field cannot be empty", isError: true)
         }
+        
     }
     
-    func addUrlToTableView(savedUrl: SavedUrl){
+    func fillStatusLabel(statusText:String, isError:Bool){
+        self.statusLabel.text = statusText
+        if isError {
+            self.statusLabel.textColor = .red
+        }else{
+            self.statusLabel.textColor = .gray
+        }
+        self.largeURLTextField.text = ""
+    }
+    
+    func verifyUrl (urlString: String?) -> Bool {
+        //Check for nil
+        if let urlString = urlString {
+            // create NSURL instance
+            if let url = NSURL(string: urlString) {
+                // check if your application can open the NSURL instance
+                return UIApplication.shared.canOpenURL(url as URL)
+            }
+        }
+        return false
+    }
+    
+    func addUrlToTableView(savedUrl: SavedUrl, error: String?){
         self.savedUrlArray.append(savedUrl)
         self.saveUrls()
         DispatchQueue.main.async {
-            self.tinyURLLabel.text = savedUrl.tinyUrl
-            self.tableview.reloadData()
+            if error == nil {
+                self.fillStatusLabel(statusText: "Url correcty shorten and added in the table", isError: false)
+                self.tableview.reloadData()
+            }else{
+                self.fillStatusLabel(statusText: "Error during the shorten processus : \(String(describing: error))", isError: true)
+            }
         }
     }
 
