@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func convertButtonClicked(_ sender: Any) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd MMMM yyyy, HH:mm"
         if let longUrl = largeURLTextField.text {
             if !longUrl.isEmpty{
                 let isCorrectUrl = verifyUrl(urlString: longUrl)
@@ -94,12 +94,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        let url = savedUrlArray[indexPath.row]
-        cell.textLabel?.text = url.tinyUrl
+        let cell:TinyUrlTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TinyUrlCell") as! TinyUrlTableViewCell
         
-        cell.detailTextLabel?.text = url.date
+        let url = savedUrlArray[indexPath.row]
+        cell.tinyUrlLabel?.text = url.tinyUrl
+        cell.dateLabel?.text = url.date
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
